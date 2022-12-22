@@ -70,6 +70,9 @@ function unknownCommand(c){
 function hello(){
   console.log('hello!')
 }
+/**
+ * this function is supposed to run all the commands
+ */
 function help(){
   console.log('help!\n' + 'hello!\n' + 'quit!' )
 }
