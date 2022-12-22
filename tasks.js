@@ -45,6 +45,10 @@ function onDataReceived(text) {
   else if(text === 'help\n'){
     help();
   }
+  else if(text === 'list\n'){
+    list();
+  }
+  
   else{
     unknownCommand(text);
   }
@@ -87,6 +91,13 @@ function help(){
 function quit(){
   console.log('Quitting now, goodbye!')
   process.exit();
+}
+let list1=["aya","maryam"];
+function list(){
+console.log('list1');
+list1.map((index)=>{
+  console.log(`${list1.indexOf(index)+1}-${(index)}`);
+})
 }
 
 // The following line starts the application
