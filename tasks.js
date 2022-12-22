@@ -50,6 +50,7 @@ function onDataReceived(text) {
   }
 }
 
+
 /**
  * prints "unknown command"
  * This function is supposed to run when all other commands have failed
@@ -75,7 +76,7 @@ function hello(text){
  * this function is supposed to run all the commands
  */
 function help(){
-  console.log('help!\n' + 'hello!\n' + 'quit!' )
+  console.log('help!\n' + 'hello you can write anything you want!\n' + 'quit!' )
 }
 
 /**
