@@ -38,8 +38,9 @@ function onDataReceived(text) {
     quit();
    
   }
-  else if(text === 'hello\n'){
-    hello();
+  else if(text.startsWith('hello')){
+    hello(text);
+   
   }
   else if(text === 'help\n'){
     help();
@@ -67,8 +68,9 @@ function unknownCommand(c){
  *
  * @returns {void}
  */
-function hello(){
-  console.log('hello!')
+
+function hello(text){
+  console.log(text.trim()+"!")
 }
 /**
  * this function is supposed to run all the commands
