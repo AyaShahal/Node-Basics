@@ -48,7 +48,9 @@ function onDataReceived(text) {
   else if(text === 'list\n'){
     list();
   }
-  
+  else if(text.startsWith("add")){
+    add(text);
+  }
   else{
     unknownCommand(text);
   }
@@ -94,11 +96,16 @@ function quit(){
 }
 let list1=["aya","maryam"];
 function list(){
-console.log('list1');
-list1.map((index)=>{
-  console.log(`${list1.indexOf(index)+1}-${(index)}`);
-})
+list1.map((el)=>
+  console.log(list1.indexOf(el)+1 +" "+ el));
 }
-
+/**  add the element
+ * @param  {string} c 
+* @returns {void}
+*/
+function add(text){
+  list1.push(text.substring(3));
+  
+}
 // The following line starts the application
 startApp("Aya")
