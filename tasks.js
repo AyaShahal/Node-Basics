@@ -52,16 +52,17 @@ function onDataReceived(text) {
   else if(text.startsWith("add")){
     add(text);
   }
-  // else if(text === 'remove\n'){
-  // remove_last_elt();
-  // }
+  
    else if(text.startsWith("remove")){
     remove(text);
     }
-
+else if(text.startsWith("edit")){
+  edit(text);
+}
   else{
     unknownCommand(text);
   }
+
 }
 
 
@@ -116,13 +117,6 @@ function add(text){
   
 }
 
-// /** 
-// * @param  {string} c 
-// * @returns {void}
-// */
-// function  remove_last_elt(){
-//   list1.shift();
-// }
 /** 
 * @param  {string} c 
 * @returns {void}
@@ -131,15 +125,23 @@ function add(text){
    if(text === "remove\n"){
     list1.splice(-1);
    }
-     else if (text === 'remove1\n'){
-      list1.splice(0,1);
-     }
-     else if (text === 'remove2\n'){
-      list1.splice(1,1);
-     }
-     else {
+     else if (text.trim().split(" ")[1] > list1.length){
       console.log("number that does not exist")
      }
+     else {
+     list1.splice(parseInt(text.trim().split(" ")[1])-1,1)
+     }
  }
+ /** 
+* @param  {string} c 
+* @returns {void}
+*/
+//  function edit(text){
+//   if (text === 'edit'){
+//     console.log("error")
+//   }
+//   else if (text === '')
+//  }
+
 // The following line starts the application
 startApp("Aya")
