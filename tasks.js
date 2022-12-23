@@ -103,17 +103,20 @@ function quit(){
   console.log('Quitting now, goodbye!')
   process.exit();
 }
-let list1=["aya","maryam"];
+let list1=[{list:"aya",done:true},{list:"maryam",done:false}]
 function list(){
-list1.map((el)=>
-  console.log(list1.indexOf(el)+1 +" "+ el));
-}
+ list1.map((el,index)=>{
+ let out=el.done?"[✓]"+el.list:"[ ]"+el.list;
+   console.log(index+1 +out)});
+ }
+
+
 /**  add the element
  * @param  {string} c 
 * @returns {void}
 */
 function add(text){
-  list1.push(text.substring(3));
+  list1.push({list:text.substring(3),done:false});
   
 }
 
@@ -142,10 +145,10 @@ function add(text){
   }
    else if (isNaN(parseInt((text.trim().split(" ")[1])))){
     console.log("done")
-   list1[list1.length-1] = text.substring(5,text.length)
+   list1[list1.length-1] = {list:text.substring(5,text.length)}
    }
    else {
-    list1[parseInt(text.trim().split(" ")[1])-1]= text.substring(6)
+    list1[parseInt(text.trim().split(" ")[1])-1]= {list:text.substring(6)}
    }
  }
 
