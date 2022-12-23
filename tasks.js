@@ -97,7 +97,7 @@ function hello(text){
  * this function is supposed to run all the commands
  */
 function help(){
-  console.log('help!\n' + 'hello you can write anything you want!\n' + 'quit!' +'list' +'add'+'remove')
+  console.log('help!\n' + 'hello you can write anything you want!\n' + 'quit!' +'list' +'add'+'remove'+'check'+'uncheck')
 }
 
 /**
