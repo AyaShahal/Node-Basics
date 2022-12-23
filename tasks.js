@@ -31,6 +31,7 @@ function startApp(name){
  * This function  then directs to other functions
  * 
  * @param  {string} text data typed by the user
+ * @param  {number} number data typed by the user
  * @returns {void}
  */
 function onDataReceived(text) {
@@ -51,6 +52,13 @@ function onDataReceived(text) {
   else if(text.startsWith("add")){
     add(text);
   }
+  // else if(text === 'remove\n'){
+  // remove_last_elt();
+  // }
+   else if(text.startsWith("remove")){
+    remove(text);
+    }
+
   else{
     unknownCommand(text);
   }
@@ -107,5 +115,28 @@ function add(text){
   list1.push(text.substring(3));
   
 }
+
+// /** 
+// * @param  {string} c 
+// * @returns {void}
+// */
+// function  remove_last_elt(){
+//   list1.shift();
+// }
+/** 
+* @param  {string} c 
+* @returns {void}
+*/
+ function remove(text){
+   if(text === "remove\n"){
+    list1.splice(-1);
+   }
+     else if (text === 'remove1\n'){
+      list1.splice(0,1);
+     }
+     else if (text === 'remove2\n'){
+      list1.splice(1,1);
+     }
+ }
 // The following line starts the application
 startApp("Aya")
