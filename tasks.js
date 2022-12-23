@@ -1,4 +1,23 @@
 
+let fake_db = process.argv[2];
+var fs = require('fs');
+function saveData(){
+let data = JSON.stringify(list1);
+fs.writeFile(fake_db, data, function (err) {
+  if (err) throw err;
+  console.log('Saved!');
+});
+}
+function readData() {
+  fs.readFile(fake_db, (data) => {
+    try{
+    let list1 = JSON.parse(data);
+    console.log(list1);
+  }catch(error){
+    console.error("Empty database");
+  }
+});
+}
 /**
  * Starts the application
  * This is the function that is run when the app starts
@@ -15,6 +34,7 @@ function startApp(name){
   process.stdin.on('data', onDataReceived);
   console.log(`Welcome to ${name}'s application!`)
   console.log("--------------------")
+  readData();
 }
 
 
@@ -36,6 +56,7 @@ function startApp(name){
  */
 function onDataReceived(text) {
   if (text === 'quit\n' || text==='exit\n') {
+    saveData();
     quit();
    
   }
