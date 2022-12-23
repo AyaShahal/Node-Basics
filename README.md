@@ -71,7 +71,7 @@ Commit after **each** step.
 *note*: after your change your code, you **must** restart the app, or else you won't see any change.
 
 1. Change the name of the app from "Jad Sarout" to your own
-2. commit ("changed app's name")
+2. commit ("exit")
 3. People can quit the app by typing "quit". Allow people to quit the app by typing "exit" OR "quit"
 4. commit ("exit command")
 5. Add a new command, "help", that lists all the possible commands
