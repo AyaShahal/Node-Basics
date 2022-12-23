@@ -137,6 +137,9 @@ function add(text){
      else if (text === 'remove2\n'){
       list1.splice(1,1);
      }
+     else {
+      console.log("number that does not exist")
+     }
  }
 // The following line starts the application
 startApp("Aya")
