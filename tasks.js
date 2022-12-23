@@ -59,6 +59,12 @@ function onDataReceived(text) {
 else if(text.startsWith("edit")){
   edit(text);
 }
+else if(text.startsWith("check")){
+  check(text)
+}
+else if (text.startsWith("uncheck")){
+  uncheck(text)
+}
   else{
     unknownCommand(text);
   }
@@ -151,6 +157,29 @@ function add(text){
     list1[parseInt(text.trim().split(" ")[1])-1]= {list:text.substring(6)}
    }
  }
-
+  /** 
+* @param  {string} c 
+* @returns {void}
+*/
+function check(text){
+  if (text === 'check\n'){
+  console.log("error!")
+  }
+else {
+  list1[parseInt(text.trim().split(" ")[1]) - 1].done = true;
+}
+}
+  /** 
+* @param  {string} c 
+* @returns {void}
+*/
+function uncheck(text){
+  if (text === 'uncheck\n'){
+    console.log("error!")
+    }
+  else {
+    list1[parseInt(text.trim().split(" ")[1]) - 1].done = false;
+  }
+}
 // The following line starts the application
 startApp("Aya")
