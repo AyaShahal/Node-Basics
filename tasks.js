@@ -136,12 +136,18 @@ function add(text){
 * @param  {string} c 
 * @returns {void}
 */
-//  function edit(text){
-//   if (text === 'edit'){
-//     console.log("error")
-//   }
-//   else if (text === '')
-//  }
+ function edit(text)
+ {  if (text === 'edit\n'){
+    console.log("error!");
+  }
+   else if (isNaN(parseInt((text.trim().split(" ")[1])))){
+    console.log("done")
+   list1[list1.length-1] = text.substring(5,text.length)
+   }
+   else {
+    list1[parseInt(text.trim().split(" ")[1])-1]= text.substring(6)
+   }
+ }
 
 // The following line starts the application
 startApp("Aya")
